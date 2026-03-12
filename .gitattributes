@@ -1,1 +1,3 @@
 images/ export-ignore
+images/** export-ignore
+.gitattributes export-ignore
