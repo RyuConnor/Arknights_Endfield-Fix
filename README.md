@@ -40,7 +40,9 @@ Right-click and choose New > Shortcut.
 
 In the "Type the location of the item", copy and paste the following:
 
-C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process powershell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File \"D:\Games\GRYPHLINK\Arknights_Endfield.ps1\"' -Verb RunAs"
+<pre><code>
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process powershell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File \"D:\Games\GRYPHLINK\EndfieldJanitor.ps1\"' -Verb RunAs"
+</code></pre>
 
 IMPORTANT: If your game is installed elsewhere, replace D:\Games\GRYPHLINK\Arknights_Endfield.ps1 with the actual path to your script.
 
@@ -48,6 +50,6 @@ Click Next, name the shortcut GRYPHLINK, and click Finish.
 
 Verify: You can confirm this worked by right-clicking the shortcut and selecting Properties. The long command above will be listed in the Target box of the Shortcut tab.
 
-Also on the Shortcut tab you can click "Change Icon..." then click "Browse..." go to where the GRYPHLINK\Launcher.exe is and select it.  Now your shortcut will use the same icon as the launcher.
+Also on the Shortcut tab you can click "Change Icon..." then click "Browse..." go to where the GRYPHLINK\Launcher.exe is and select it.  Now your shortcut will use the same icon as the Launcher.
 
 Double click your shortcut, elevate with UAC, and a powershell prompt should appear that will give you status updates.
