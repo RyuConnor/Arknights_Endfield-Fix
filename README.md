@@ -12,7 +12,7 @@ This was vibe coded with Gemini, assuming you consider shell scripts to be code.
 ## 👨‍💻 Technical Summary (For Support/Developers)
 
 * **Access Violation:** Forcing `$env:QT_QUICK_BACKEND = "d3d11"` bypasses a null pointer bug in `PlatformProcess.exe`. This prevents the memory violation/Access Violation (`0xc0000005`) when exiting the game.
-* **Trace Persistence:** The ACE driver (or game engine) occasionally fails to terminate the Kernel Event Trace Session upon exit. This leaves a stale handle on the trace GUID (`S43F9F03-T312-D930-N88-B74BA0B3`). logman query -ets can find the GUID that ACE has created.
+* **Trace Persistence:** The ACE driver (or game engine) occasionally fails to terminate the Kernel Event Trace Session upon exit. This leaves a stale handle on the trace GUID (`S43F9F03-T312-D930-N88-B74BA0B3`). `logman query -ets` can find the GUID that ACE has created.
 * **Event ID 2:** When the game is re-launched, Windows denies the request to start a new trace session because the previous one is still active in the kernel. This script uses `logman stop` to cleanup the environment between sessions.
 
 ---
