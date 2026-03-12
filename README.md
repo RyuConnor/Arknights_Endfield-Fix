@@ -5,7 +5,7 @@ This was vibe coded with Gemini, assuming you consider shell scripts to be code.
 ## 🛠️ Issues Addressed
 
 * **PlatformProcess.exe Access Violation:** Fixes the memory crash/Null Pointer exception by forcing the UI to use a stable rendering backend (`d3d11`). Despite setting d3d11, it falls back to software rendering. It solves the crash, but expect the store to render slowly as you swipe to obtain more waifus.
-* **Event ID 2 (Kernel-EventTracing):** Resolves the "File already exists" error by proactively flushing "zombie" ACE anti-cheat traces that fail to close on game exit. To be clear this flushing is done after closing the game, not during. Messing with ACE while the game is active is obviously asking for trouble and this script does NOT do to that.
+* **Event ID 2 (Kernel-EventTracing):** Resolves the "File already exists" error by proactively flushing "zombie" ACE anti-cheat traces that fail to close on game exit. To be clear this flushing is done after closing the game, not during. Messing with ACE while the game is active is obviously asking for trouble and this script does NOT do that.
 
 ---
 
