@@ -2,6 +2,8 @@
 This is a lightweight PowerShell wrapper designed to workaround the PlatformProcess.exe Access Violation crash and the Event ID 2 error in Arknights Endfield.
 This was vibe coded with Gemini, assuming you consider shell scripts to be code.
 
+![Arknights-Endfield-Fix](images/ae-fix.png)
+
 ## 🛠️ Issues Addressed
 
 * **PlatformProcess.exe Access Violation:** Fixes the memory crash/Null Pointer exception by forcing the UI to use a stable rendering backend (`d3d11`). Despite setting d3d11, it falls back to software rendering. It solves the crash, but expect the store to render slowly as you swipe to obtain more waifus.
