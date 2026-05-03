@@ -2,6 +2,10 @@
 This is a lightweight PowerShell wrapper designed to workaround the PlatformProcess.exe Access Violation crash and the Event ID 2 error in Arknights Endfield.
 This was vibe coded with Gemini, assuming you consider shell scripts to be code.
 
+##At the Wake of Spring 1.2 Release
+* As of the 1.2 release of Endfield, the Access Violation bug in PlatformProcess.exe has been fixed. Commenting out `$env:QT_QUICK_BACKEND = "d3d11"` with a # symbol in the script will disable the work around.
+* The Event ID 2 error caused by the kernel trace is mostly fixed, but still breaks under specific conditions. This script is still useful for dealing with those niche scenarios.
+
 ![Arknights-Endfield-Fix](images/ae-fix.png)
 
 ## 🛠️ Issues Addressed
@@ -14,7 +18,7 @@ This was vibe coded with Gemini, assuming you consider shell scripts to be code.
 ## 👨‍💻 Technical Summary (For Support/Developers)
 
 * **Access Violation:** Forcing `$env:QT_QUICK_BACKEND = "d3d11"` bypasses a null pointer bug in `PlatformProcess.exe`. This prevents the memory violation/Access Violation (`0xc0000005`) when exiting the game.
-* **Trace Persistence:** The ACE driver (or game engine) fails to terminate the Kernel Event Trace Session upon exit. This leaves a stale handle on the trace GUID (`S43F9F03-T312-D930-N88-B74BA0B3` or `8696EAC4-1288-4288-A4EE-49EE431B0AD9`). `logman query -ets` can find the GUID that ACE has created.
+* **Trace Persistence:** The ACE driver (or game engine) fails to terminate the Kernel Event Trace Session upon exit. This leaves a stale handle on the trace GUID (`S43F9F03-T312-D930-N88-B74BA0B3`). `logman query -ets` can find the GUID that ACE has created.
 * **Event ID 2:** When the game is re-launched, Windows denies the request to start a new trace session because the previous one is still active in the kernel. This script uses `logman stop` to cleanup the environment between sessions.
 
 ---
