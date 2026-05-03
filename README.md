@@ -2,7 +2,7 @@
 This is a lightweight PowerShell wrapper designed to workaround the PlatformProcess.exe Access Violation crash and the Event ID 2 error in Arknights Endfield.
 This was vibe coded with Gemini, assuming you consider shell scripts to be code.
 
-##At the Wake of Spring 1.2 Release
+## At the Wake of Spring 1.2 Release
 * As of the 1.2 release of Endfield, the Access Violation bug in PlatformProcess.exe has been fixed. Commenting out `$env:QT_QUICK_BACKEND = "d3d11"` with a # symbol in the script will disable the work around.
 * The Event ID 2 error caused by the kernel trace is mostly fixed, but still breaks under specific conditions. This script is still useful for dealing with those niche scenarios.
 
